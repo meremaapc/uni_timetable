@@ -34,4 +34,26 @@
                         minValue="1"/>
     </changeSet>
 
+    <changeSet id="add-group-column" author="greenmapc">
+        <addColumn tableName="student">
+            <column name="group_id" type="bigint"/>
+        </addColumn>
+    </changeSet>
+
+
+    <changeSet id="create_fk_student_group" author="greenmapc">
+        <preConditions>
+            <not>
+                <foreignKeyConstraintExists foreignKeyTableName="student"
+                                            foreignKeyName="fk_student_group"/>
+            </not>
+        </preConditions>
+        <addForeignKeyConstraint
+                baseTableName="student"
+                baseColumnNames="group_id"
+                constraintName="fk_student_group"
+                referencedTableName="uni_group"
+                referencedColumnNames="id"/>
+    </changeSet>
+
 </databaseChangeLog>
