@@ -1,0 +1,22 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /uni_timetable
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/uni_timetable
+    username: timetable
+    password: timetable
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        default_schema: public
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+    open-in-view: false
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.xml
+    default-schema: public
