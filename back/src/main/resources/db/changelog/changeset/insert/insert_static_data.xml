@@ -1,0 +1,135 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <changeSet id="insert-student-data-to-student-table" author="greenmapc">
+        <sql>
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Журавлева Анастасия Сергеевна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Большаков Эдуард Сергеевич', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Мирзагитова Эмилия Равилевна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Равилова Эвелина Фанисовна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Тугбаева Анна Олеговна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Ковырзин Дмитрий Сергеевич', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Сурков Никита Денисович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Насибуллина Олеся Радиковна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Саховский Андрей Сергеевич', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Гребнев Николай Дмитриевич', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Поздеев Максим Владимирович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Юлдашев Ниёз Бахтиёрович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Карамов Никита Васильевич', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Байгужина Камила Эдуардовна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Нестерова Ирина Михайловна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Хафизьянов Тимур Робертович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Барсков Дмитрий Игоревич', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Хрусталёв Глеб Алексеевич', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Кутузов Андрей Дмитриевич', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Курин Степан Владимирович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Пичкалев Максим Александрович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Махиянова Карина Валерьевна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Пустобаева Ольга Николаевна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Шаряпов Наиль Ирекович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Захаров Кирилл Алексеевич ', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Ананьев Владимир Владимирович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'БадретдиновТимурМаратович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'БезруковВладимирАлексеевич', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'АрдашироваАйнаРифовна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'ДжангидзеЛеванЗурабович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'ЕжковАлександрГригорьевич', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'НигметзяноваКамилаРинатовна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'ПашаевЭмильАсифович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'АхмедшинаЛейлаРафаэлевна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'ЮсуповаТалияФанисовна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'ГараеваДиляраРавилевна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'ШайхутдиновБулатРустемович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'КовтунДарьяМаксимовна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'ХуснутдиновАязСиреневич', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'МиннеахметовРазильРустемович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'ИсангуловМаратВильданович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'СагитовИльнурМаратович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'БеспаловВадимНиколаевич', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'ГарифуллинаАделинаРобертовна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'АбдуллинШамильРустемович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'СалахиевАлмазРинатович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'ГибадуллинРинатГульусович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'МуллаяновАйнурИльфакович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'ФатиховНазарРинатович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'ТокаревМаксимЕвгеньевич', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'ЗамановАрсланИлдарович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'МасалимоваДианаГамировна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'КуроваАнитаДмитриевна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Каюмов Булат Ильдарович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Мухамедшина Диляра Рависовна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Имамеев Динир Тагирович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Мусина Гузель Рустэмовна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Кожуховский Борис Глебович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Хамеджанов Алмаз Рустамович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Корнилов Михаил Владимирович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Шагиева Дария Раифовна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Аминов Эмиль Маратович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Бурганов Абдулкодир Салохиддинович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Мальцев Владислав Ильич', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Павличенков Игорь Антонович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Скрипка Ирина Дмитриевна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Булатов Азат Газинурович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Ахмадеев Эдгар Эмилевич', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Шигапов Рустам Маратович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Шакиров Рафаэль Ильдарович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Болтушкин Антон Александрович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Мухаметзянов Азат Ильдусович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Беженцева Мария Анатольевна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Бикмаева Камиля Равилевна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Комаров Ильнур Валерьевич', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Мухаметзянова Гузелия Ильдаровна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Карпов Даниил Евгеньевич', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Латипов Камиль Радикович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Бадыгова Алия Рамисовна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Уразаев Нияз Зуфарович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Шамсутдинов Ришат Рашитович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Аликина Полина Дмитриевна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Сабиров Ренат Рустемович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Горошко Иван Сергеевич', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Гайсин Артур Эдуардович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Кузьменко Анна Алексеевна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Гарифуллин Ильяс Ниязович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Зайдуллин Самат Вильянисович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Котик Арина Александровна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Килина Ольга Владимировна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Тартаковский Денис Давидович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Галеев Рустем Гумаревич', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Меметов Айдер Фуатович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Меренова Анастасия Станиславовна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Шарафутдинова Гузель Ильмасовна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Пеньков Павел Константинович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Каракулькин Александр Олегович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Александров Андрей Михайлович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Харисов Раиль Мисхатович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Хазиев Булат Маратович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Хасанова Элина Азатовна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Шагабиев Ильмир Ильшатович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Карабаева Алина Юрьевна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Калимуллин Эрнест Ришатович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Карпова Ксения Вячеславовна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Галиакберов Тимур Сергеевич', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Сабирзянов Айдар Илсурович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Синицин Олег Андреевич', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Галиев Руслан Андреевич', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Валитов Динар Илдарович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Гафиятуллин Эмиль Рафаэлевич', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Лапин Александр Дмитриевич', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Чернышева Ксения Сергеевна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Гришин Тимур Эдуардович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Замалиев Данис Рустамович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Ахметзянова Лия Салаватовна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Гатауллин Ильшат Ильясович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Малецков Матвей Сергеевич', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Сунгатуллин Тимур Ленарович', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Капитонова Ксения Алексеевна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Александровская Анастасия Викторовна', 2014);
+            INSERT INTO student (id, name, year_of_receipt) VALUES (nextval('student_id_seq'), 'Даминов Ильназ Азатович', 2014);
+
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>
