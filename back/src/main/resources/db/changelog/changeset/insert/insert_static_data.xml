@@ -132,4 +132,142 @@
         </sql>
     </changeSet>
 
+    <changeSet id="add-grpups" author="greenmapc">
+        <sql>
+            INSERT INTO uni_group(id, number) VALUES (nextval('uni_group_id_seq'), '11-701');
+            INSERT INTO uni_group(id, number) VALUES (nextval('uni_group_id_seq'), '11-702');
+            INSERT INTO uni_group(id, number) VALUES (nextval('uni_group_id_seq'), '11-703');
+            INSERT INTO uni_group(id, number) VALUES (nextval('uni_group_id_seq'), '11-704');
+            INSERT INTO uni_group(id, number) VALUES (nextval('uni_group_id_seq'), '11-705');
+            INSERT INTO uni_group(id, number) VALUES (nextval('uni_group_id_seq'), '11-706');
+        </sql>
+    </changeSet>
+
+    <changeSet id="add-group-id-for-students" author="greenmapc">
+        <sql>
+            UPDATE student SET group_id = 1 WHERE id =  1;
+            UPDATE student SET group_id = 1 WHERE id =  2;
+            UPDATE student SET group_id = 1 WHERE id =  3;
+            UPDATE student SET group_id = 1 WHERE id =  4;
+            UPDATE student SET group_id = 1 WHERE id =  5;
+            UPDATE student SET group_id = 1 WHERE id =  6;
+            UPDATE student SET group_id = 1 WHERE id =  7;
+            UPDATE student SET group_id = 1 WHERE id =  8;
+            UPDATE student SET group_id = 1 WHERE id =  9;
+            UPDATE student SET group_id = 1 WHERE id = 10;
+            UPDATE student SET group_id = 1 WHERE id = 11;
+            UPDATE student SET group_id = 1 WHERE id = 12;
+            UPDATE student SET group_id = 1 WHERE id = 13;
+            UPDATE student SET group_id = 1 WHERE id = 14;
+            UPDATE student SET group_id = 1 WHERE id = 15;
+            UPDATE student SET group_id = 1 WHERE id = 16;
+            UPDATE student SET group_id = 1 WHERE id = 17;
+            UPDATE student SET group_id = 1 WHERE id = 18;
+            UPDATE student SET group_id = 1 WHERE id = 19;
+            UPDATE student SET group_id = 1 WHERE id = 20;
+            UPDATE student SET group_id = 1 WHERE id = 21;
+            UPDATE student SET group_id = 2 WHERE id = 22;
+            UPDATE student SET group_id = 2 WHERE id = 23;
+            UPDATE student SET group_id = 2 WHERE id = 24;
+            UPDATE student SET group_id = 2 WHERE id = 25;
+            UPDATE student SET group_id = 2 WHERE id = 26;
+            UPDATE student SET group_id = 2 WHERE id = 27;
+            UPDATE student SET group_id = 2 WHERE id = 28;
+            UPDATE student SET group_id = 2 WHERE id = 29;
+            UPDATE student SET group_id = 2 WHERE id = 30;
+            UPDATE student SET group_id = 2 WHERE id = 31;
+            UPDATE student SET group_id = 2 WHERE id = 32;
+            UPDATE student SET group_id = 2 WHERE id = 33;
+            UPDATE student SET group_id = 2 WHERE id = 34;
+            UPDATE student SET group_id = 2 WHERE id = 35;
+            UPDATE student SET group_id = 2 WHERE id = 36;
+            UPDATE student SET group_id = 2 WHERE id = 37;
+            UPDATE student SET group_id = 2 WHERE id = 38;
+            UPDATE student SET group_id = 2 WHERE id = 39;
+            UPDATE student SET group_id = 2 WHERE id = 40;
+            UPDATE student SET group_id = 2 WHERE id = 41;
+            UPDATE student SET group_id = 2 WHERE id = 42;
+            UPDATE student SET group_id = 3 WHERE id = 43;
+            UPDATE student SET group_id = 3 WHERE id = 44;
+            UPDATE student SET group_id = 3 WHERE id = 45;
+            UPDATE student SET group_id = 3 WHERE id = 46;
+            UPDATE student SET group_id = 3 WHERE id = 47;
+            UPDATE student SET group_id = 3 WHERE id = 48;
+            UPDATE student SET group_id = 3 WHERE id = 49;
+            UPDATE student SET group_id = 3 WHERE id = 50;
+            UPDATE student SET group_id = 3 WHERE id = 51;
+            UPDATE student SET group_id = 3 WHERE id = 52;
+            UPDATE student SET group_id = 3 WHERE id = 53;
+            UPDATE student SET group_id = 3 WHERE id = 54;
+            UPDATE student SET group_id = 3 WHERE id = 55;
+            UPDATE student SET group_id = 3 WHERE id = 56;
+            UPDATE student SET group_id = 3 WHERE id = 57;
+            UPDATE student SET group_id = 3 WHERE id = 58;
+            UPDATE student SET group_id = 3 WHERE id = 59;
+            UPDATE student SET group_id = 3 WHERE id = 60;
+            UPDATE student SET group_id = 3 WHERE id = 61;
+            UPDATE student SET group_id = 3 WHERE id = 62;
+            UPDATE student SET group_id = 4 WHERE id = 63;
+            UPDATE student SET group_id = 4 WHERE id = 64;
+            UPDATE student SET group_id = 4 WHERE id = 65;
+            UPDATE student SET group_id = 4 WHERE id = 66;
+            UPDATE student SET group_id = 4 WHERE id = 67;
+            UPDATE student SET group_id = 4 WHERE id = 68;
+            UPDATE student SET group_id = 4 WHERE id = 69;
+            UPDATE student SET group_id = 4 WHERE id = 70;
+            UPDATE student SET group_id = 4 WHERE id = 71;
+            UPDATE student SET group_id = 4 WHERE id = 72;
+            UPDATE student SET group_id = 4 WHERE id = 73;
+            UPDATE student SET group_id = 4 WHERE id = 74;
+            UPDATE student SET group_id = 4 WHERE id = 75;
+            UPDATE student SET group_id = 4 WHERE id = 76;
+            UPDATE student SET group_id = 4 WHERE id = 77;
+            UPDATE student SET group_id = 4 WHERE id = 78;
+            UPDATE student SET group_id = 4 WHERE id = 79;
+            UPDATE student SET group_id = 4 WHERE id = 80;
+            UPDATE student SET group_id = 4 WHERE id = 81;
+            UPDATE student SET group_id = 4 WHERE id = 82;
+            UPDATE student SET group_id = 5 WHERE id = 83;
+            UPDATE student SET group_id = 5 WHERE id = 84;
+            UPDATE student SET group_id = 5 WHERE id = 85;
+            UPDATE student SET group_id = 5 WHERE id = 86;
+            UPDATE student SET group_id = 5 WHERE id = 87;
+            UPDATE student SET group_id = 5 WHERE id = 88;
+            UPDATE student SET group_id = 5 WHERE id = 89;
+            UPDATE student SET group_id = 5 WHERE id = 90;
+            UPDATE student SET group_id = 5 WHERE id = 91;
+            UPDATE student SET group_id = 5 WHERE id = 92;
+            UPDATE student SET group_id = 5 WHERE id = 93;
+            UPDATE student SET group_id = 5 WHERE id = 94;
+            UPDATE student SET group_id = 5 WHERE id = 95;
+            UPDATE student SET group_id = 5 WHERE id = 96;
+            UPDATE student SET group_id = 5 WHERE id = 97;
+            UPDATE student SET group_id = 5 WHERE id = 98;
+            UPDATE student SET group_id = 5 WHERE id = 99;
+            UPDATE student SET group_id = 5 WHERE id = 100;
+            UPDATE student SET group_id = 5 WHERE id = 101;
+            UPDATE student SET group_id = 5 WHERE id = 102;
+            UPDATE student SET group_id = 6 WHERE id = 103;
+            UPDATE student SET group_id = 6 WHERE id = 104;
+            UPDATE student SET group_id = 6 WHERE id = 105;
+            UPDATE student SET group_id = 6 WHERE id = 106;
+            UPDATE student SET group_id = 6 WHERE id = 107;
+            UPDATE student SET group_id = 6 WHERE id = 108;
+            UPDATE student SET group_id = 6 WHERE id = 109;
+            UPDATE student SET group_id = 6 WHERE id = 110;
+            UPDATE student SET group_id = 6 WHERE id = 111;
+            UPDATE student SET group_id = 6 WHERE id = 112;
+            UPDATE student SET group_id = 6 WHERE id = 113;
+            UPDATE student SET group_id = 6 WHERE id = 114;
+            UPDATE student SET group_id = 6 WHERE id = 115;
+            UPDATE student SET group_id = 6 WHERE id = 116;
+            UPDATE student SET group_id = 6 WHERE id = 117;
+            UPDATE student SET group_id = 6 WHERE id = 118;
+            UPDATE student SET group_id = 6 WHERE id = 119;
+            UPDATE student SET group_id = 6 WHERE id = 120;
+            UPDATE student SET group_id = 6 WHERE id = 121;
+            UPDATE student SET group_id = 6 WHERE id = 122;
+        </sql>
+    </changeSet>
+
 </databaseChangeLog>
