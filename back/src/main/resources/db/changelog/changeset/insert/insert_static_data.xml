@@ -290,4 +290,24 @@
         </sql>
     </changeSet>
 
+    <changeSet id="insert-data-into-teacher" author="greenmapc">
+        <sql>
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Арсланов М.М.');
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Абрамский М.М');
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Широкова Е.А.');
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Корнеева Н.Н');
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Калимуллин И.Ш.');
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Ибрагимов Р.Р.');
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Зубков М.В.');
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Махмутова Д.И.');
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Муллагалиев Э.А.');
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Кац Д.Б.');
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Байрашева В.Р.');
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Каштанова Е.К.');
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Салимов Ф.И.');
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Евоампиев И.А.');
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Хайруллин А.Ф.');
+        </sql>
+    </changeSet>
+
 </databaseChangeLog>
