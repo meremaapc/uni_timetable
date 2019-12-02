@@ -1,0 +1,38 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <changeSet id="create-table-teacher_subject" author="greenmapc">
+        <preConditions>
+            <not>
+                <tableExists tableName="teacher_subject"/>
+            </not>
+        </preConditions>
+        <createTable tableName="teacher_subject">
+            <column name="teacher_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="subject_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create_fk_teacher_subject" author="greenmapc">
+        <addForeignKeyConstraint
+                baseTableName="teacher_subject"
+                baseColumnNames="teacher_id"
+                constraintName="fk_teacher_subject_teacher"
+                referencedTableName="teacher"
+                referencedColumnNames="id"/>
+        <addForeignKeyConstraint
+                baseTableName="teacher_subject"
+                baseColumnNames="subject_id"
+                constraintName="fk_teacher_subject_subject"
+                referencedTableName="subject"
+                referencedColumnNames="id"/>
+    </changeSet>
+
+</databaseChangeLog>

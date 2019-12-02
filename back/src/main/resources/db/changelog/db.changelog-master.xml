@@ -16,6 +16,8 @@
 
     <!-- Teacher -->
     <include file="db/changelog/changeset/teacher/teacher.xml"/>
+    <include file="db/changelog/changeset/teacher/teacher_subject.xml"/>
+
 
     <!-- Insertion data -->
     <include file="db/changelog/changeset/insert/insert_static_data.xml"/>
