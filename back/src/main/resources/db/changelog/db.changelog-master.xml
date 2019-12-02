@@ -11,6 +11,17 @@
     <!-- Student -->
     <include file="db/changelog/changeset/student/student.xml"/>
 
+    <!-- Subject -->
+    <include file="db/changelog/changeset/subject/subject.xml"/>
+
+    <!-- Teacher -->
+    <include file="db/changelog/changeset/teacher/teacher.xml"/>
+    <include file="db/changelog/changeset/teacher/teacher_subject.xml"/>
+
+    <!-- Auditory -->
+    <include file="db/changelog/changeset/auditory/auditory.xml"/>
+
+
     <!-- Insertion data -->
     <include file="db/changelog/changeset/insert/insert_static_data.xml"/>
 

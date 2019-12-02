@@ -270,4 +270,150 @@
         </sql>
     </changeSet>
 
+    <changeSet id="insert-data-into-subject" author="greenmapc">
+        <sql>
+            INSERT INTO subject(id, name) VALUES (nextval('subject_id_seq'), 'Дискретная математика');
+            INSERT INTO subject(id, name) VALUES (nextval('subject_id_seq'), 'Информатика');
+            INSERT INTO subject(id, name) VALUES (nextval('subject_id_seq'), 'Математический анализ');
+            INSERT INTO subject(id, name) VALUES (nextval('subject_id_seq'), 'Алгебра и геометрия');
+            INSERT INTO subject(id, name) VALUES (nextval('subject_id_seq'), 'ВССиТ');
+            INSERT INTO subject(id, name) VALUES (nextval('subject_id_seq'), 'Базы данных');
+            INSERT INTO subject(id, name) VALUES (nextval('subject_id_seq'), 'Теория вероятностей и математическая статистика');
+            INSERT INTO subject(id, name) VALUES (nextval('subject_id_seq'), 'Разработка приложений на Unity 3D');
+            INSERT INTO subject(id, name) VALUES (nextval('subject_id_seq'), 'Разработка мобильных приложений');
+            INSERT INTO subject(id, name) VALUES (nextval('subject_id_seq'), 'Программирование на С++');
+            INSERT INTO subject(id, name) VALUES (nextval('subject_id_seq'), 'Программная инженерия');
+            INSERT INTO subject(id, name) VALUES (nextval('subject_id_seq'), 'Теория информации и кодирования');
+            INSERT INTO subject(id, name) VALUES (nextval('subject_id_seq'), 'Управление качеством разработки');
+            INSERT INTO subject(id, name) VALUES (nextval('subject_id_seq'), 'Управление проектами');
+            INSERT INTO subject(id, name) VALUES (nextval('subject_id_seq'), 'Интернет-программирование');
+        </sql>
+    </changeSet>
+
+    <changeSet id="insert-data-into-teacher" author="greenmapc">
+        <sql>
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Арсланов М.М.');
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Абрамский М.М');
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Широкова Е.А.');
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Корнеева Н.Н');
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Калимуллин И.Ш.');
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Ибрагимов Р.Р.');
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Зубков М.В.');
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Махмутова Д.И.');
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Муллагалиев Э.А.');
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Кац Д.Б.');
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Байрашева В.Р.');
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Каштанова Е.К.');
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Салимов Ф.И.');
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Евоампиев И.А.');
+            INSERT INTO teacher(id, name) VALUES (nextval('teacher_id_seq'), 'Хайруллин А.Ф.');
+        </sql>
+    </changeSet>
+
+    <changeSet id="insert-data-into-teacher_subject" author="greenmapc">
+        <sql>
+            INSERT INTO teacher_subject VALUES (1,1);
+            INSERT INTO teacher_subject VALUES (1,2);
+            INSERT INTO teacher_subject VALUES (2,2);
+            INSERT INTO teacher_subject VALUES (2,3);
+            INSERT INTO teacher_subject VALUES (3,3);
+            INSERT INTO teacher_subject VALUES (3,4);
+            INSERT INTO teacher_subject VALUES (4,4);
+            INSERT INTO teacher_subject VALUES (4,5);
+            INSERT INTO teacher_subject VALUES (5,5);
+            INSERT INTO teacher_subject VALUES (5,6);
+            INSERT INTO teacher_subject VALUES (6,6);
+            INSERT INTO teacher_subject VALUES (6,7);
+            INSERT INTO teacher_subject VALUES (7,7);
+            INSERT INTO teacher_subject VALUES (7,8);
+            INSERT INTO teacher_subject VALUES (8,8);
+            INSERT INTO teacher_subject VALUES (8,9);
+            INSERT INTO teacher_subject VALUES (9,9);
+            INSERT INTO teacher_subject VALUES (9,10);
+            INSERT INTO teacher_subject VALUES (10,10);
+            INSERT INTO teacher_subject VALUES (10,11);
+            INSERT INTO teacher_subject VALUES (11,11);
+            INSERT INTO teacher_subject VALUES (11,12);
+            INSERT INTO teacher_subject VALUES (12,12);
+            INSERT INTO teacher_subject VALUES (12,13);
+            INSERT INTO teacher_subject VALUES (13,13);
+            INSERT INTO teacher_subject VALUES (13,14);
+            INSERT INTO teacher_subject VALUES (14,14);
+            INSERT INTO teacher_subject VALUES (14,15);
+            INSERT INTO teacher_subject VALUES (15,15);
+            INSERT INTO teacher_subject VALUES (15,1);
+            INSERT INTO teacher_subject VALUES (1,15);
+            INSERT INTO teacher_subject VALUES (1,14);
+            INSERT INTO teacher_subject VALUES (2,1);
+            INSERT INTO teacher_subject VALUES (2,13);
+            INSERT INTO teacher_subject VALUES (3,13);
+            INSERT INTO teacher_subject VALUES (3,12);
+            INSERT INTO teacher_subject VALUES (4,12);
+            INSERT INTO teacher_subject VALUES (4,11);
+            INSERT INTO teacher_subject VALUES (5,11);
+            INSERT INTO teacher_subject VALUES (5,10);
+            INSERT INTO teacher_subject VALUES (6,10);
+            INSERT INTO teacher_subject VALUES (6,1);
+            INSERT INTO teacher_subject VALUES (7,1);
+            INSERT INTO teacher_subject VALUES (7,2);
+            INSERT INTO teacher_subject VALUES (8,2);
+            INSERT INTO teacher_subject VALUES (8,3);
+            INSERT INTO teacher_subject VALUES (9,3);
+            INSERT INTO teacher_subject VALUES (9,4);
+            INSERT INTO teacher_subject VALUES (10,4);
+            INSERT INTO teacher_subject VALUES (10,5);
+            INSERT INTO teacher_subject VALUES (11,5);
+            INSERT INTO teacher_subject VALUES (11,6);
+            INSERT INTO teacher_subject VALUES (12,6);
+            INSERT INTO teacher_subject VALUES (12,7);
+            INSERT INTO teacher_subject VALUES (13,7);
+            INSERT INTO teacher_subject VALUES (13,8);
+            INSERT INTO teacher_subject VALUES (14,8);
+            INSERT INTO teacher_subject VALUES (14,9);
+            INSERT INTO teacher_subject VALUES (15,9);
+            INSERT INTO teacher_subject VALUES (15,14);
+        </sql>
+    </changeSet>
+
+    <changeSet id="inset-data-into-auditory" author="greenmapc">
+        <sql>
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1301');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1302');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1303');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1304');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1305');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1306');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1307');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1308');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1309');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1310');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1311');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1312');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1401');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1402');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1403');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1404');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1405');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1406');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1407');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1408');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1409');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1410');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1411');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1412');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1501');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1502');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1503');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1504');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1505');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1506');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1507');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1508');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1509');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1510');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1511');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1512');
+        </sql>
+    </changeSet>
+
 </databaseChangeLog>
