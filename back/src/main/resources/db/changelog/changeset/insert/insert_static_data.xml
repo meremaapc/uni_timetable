@@ -372,7 +372,47 @@
             INSERT INTO teacher_subject VALUES (14,9);
             INSERT INTO teacher_subject VALUES (15,9);
             INSERT INTO teacher_subject VALUES (15,14);
+        </sql>
+    </changeSet>
 
+    <changeSet id="inset-data-into-auditory" author="greenmapc">
+        <sql>
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1301');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1302');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1303');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1304');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1305');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1306');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1307');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1308');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1309');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1310');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1311');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1312');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1401');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1402');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1403');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1404');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1405');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1406');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1407');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1408');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1409');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1410');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1411');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1412');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1501');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1502');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1503');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1504');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1505');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1506');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1507');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1508');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1509');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1510');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1511');
+            INSERT INTO auditory (id ,number) VALUES (nextval('auditory_id_seq'), '1512');
         </sql>
     </changeSet>
 

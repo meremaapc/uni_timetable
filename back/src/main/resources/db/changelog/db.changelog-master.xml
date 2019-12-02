@@ -18,6 +18,9 @@
     <include file="db/changelog/changeset/teacher/teacher.xml"/>
     <include file="db/changelog/changeset/teacher/teacher_subject.xml"/>
 
+    <!-- Auditory -->
+    <include file="db/changelog/changeset/auditory/auditory.xml"/>
+
 
     <!-- Insertion data -->
     <include file="db/changelog/changeset/insert/insert_static_data.xml"/>
