@@ -1,0 +1,18 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+    <changeSet id="inset-data-into-day-of-week" author="merenaas">
+        <sql>
+            INSERT INTO day_of_week (id, name) VALUES (nextval('day_of_week_id_seq'), 'понедельник');
+            INSERT INTO day_of_week (id, name) VALUES (nextval('day_of_week_id_seq'), 'вторник');
+            INSERT INTO day_of_week (id, name) VALUES (nextval('day_of_week_id_seq'), 'среда');
+            INSERT INTO day_of_week (id, name) VALUES (nextval('day_of_week_id_seq'), 'четверг');
+            INSERT INTO day_of_week (id, name) VALUES (nextval('day_of_week_id_seq'), 'пятница');
+            INSERT INTO day_of_week (id, name) VALUES (nextval('day_of_week_id_seq'), 'суббота');
+            INSERT INTO day_of_week (id, name) VALUES (nextval('day_of_week_id_seq'), 'воскресенье');
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>
