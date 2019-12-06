@@ -11,7 +11,7 @@ public class Pair extends BasicEntity<Long>{
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "uni_group_id")
-    private Group group;
+    private UniGroup group;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "subject_id")
