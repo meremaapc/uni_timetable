@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Data
 @Entity
 @Table(name="uni_group")
-public class Group extends BasicEntity<Long>{
+public class UniGroup extends BasicEntity<Long>{
 
     @Column(name = "number")
     private String number;
