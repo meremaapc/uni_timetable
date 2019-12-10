@@ -17,7 +17,7 @@ public class Student extends BasicEntity<Long> {
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "group_id")
-    private UniGroup group;
+    private Group group;
 
 
 
