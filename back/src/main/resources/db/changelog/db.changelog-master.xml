@@ -7,6 +7,7 @@
 
     <!-- Group -->
     <include file="db/changelog/changeset/uni_group/uni_group.xml"/>
+    <include file="db/changelog/changeset/uni_group/group_subject.xml"/>
 
     <!-- Student -->
     <include file="db/changelog/changeset/student/student.xml"/>
@@ -22,9 +23,6 @@
     <include file="db/changelog/changeset/auditory/auditory.xml"/>
 
 
-    <!-- Insertion data -->
-    <include file="db/changelog/changeset/insert/insert_static_data.xml"/>
-
     <!-- Day of week -->
     <include file="db/changelog/changeset/day_of_week/day_of_week.xml"/>
     <include file="db/changelog/changeset/insert/insert_day_of_week.xml"/>
@@ -36,7 +34,12 @@
     <include file="db/changelog/changeset/pair/pair_time.xml"/>
     <include file="db/changelog/changeset/pair/pair.xml"/>
 
+    <!-- Restriction -->
+    <include file="db/changelog/changeset/restriction/restriction_pair_day_time.xml"/>
 
 
+
+    <!-- Insertion data -->
+    <include file="db/changelog/changeset/insert/insert_static_data.xml"/>
 
 </databaseChangeLog>

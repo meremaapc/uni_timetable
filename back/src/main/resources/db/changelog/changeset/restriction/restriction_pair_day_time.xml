@@ -1,0 +1,41 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <changeSet id="create-table-restriction_pair_day_time" author="greenmapc">
+        <createTable tableName="restriction_pair_day_time">
+            <column name="pair_time_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="day_of_week_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create_fk_restriction_pair_day" author="greenmapc">
+        <addForeignKeyConstraint
+                baseTableName="restriction_pair_day_time"
+                baseColumnNames="day_of_week_id"
+                constraintName="fk_restriction_pair_day"
+                referencedTableName="day_of_week"
+                referencedColumnNames="id"/>
+    </changeSet>
+
+    <changeSet id="create_fk_restriction_pair_time" author="greenmapc">
+        <addForeignKeyConstraint
+                baseTableName="restriction_pair_day_time"
+                baseColumnNames="pair_time_id"
+                constraintName="fk_restriction_pair_time"
+                referencedTableName="pair_time"
+                referencedColumnNames="id"/>
+    </changeSet>
+
+    <changeSet id="create_unique_constraint" author="greenmapc">
+        <addUniqueConstraint tableName="restriction_pair_day_time"
+                             columnNames="pair_time_id, day_of_week_id"/>
+    </changeSet>
+
+</databaseChangeLog>
