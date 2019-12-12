@@ -1,20 +1,18 @@
 package ru.itis.smarteducation.uni_timetable.entity;
 
 import lombok.Data;
+import ru.itis.smarteducation.uni_timetable.entity.pk.RestrictionPairDayTimePK;
 
-import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "pair")
+@Table(name = "restriction_pair_day_time")
 public class RestrictionPairDayTime {
 
-    @Column(name = "day_of_week_id")
-    private DayOfWeek dayOfWeek;
-
-    @Column(name = "pair_time_id")
-    private PairTime pairTime;
+    @EmbeddedId
+    private RestrictionPairDayTimePK pk;
 
 }

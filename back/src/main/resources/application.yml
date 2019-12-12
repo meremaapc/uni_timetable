@@ -6,8 +6,8 @@ server:
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/uni_timetable
-    username: postgres
-    password: 12398aa98
+    username: timetable
+    password: timetable
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
