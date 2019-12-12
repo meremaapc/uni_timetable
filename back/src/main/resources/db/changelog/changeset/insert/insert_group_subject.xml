@@ -1,0 +1,12 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+    <changeSet id="inset-data-into-day-of-week" author="merenaas">
+        <sql>
+            INSERT INTO group_subject SELECT s.id, g.id FROM subject s CROSS JOIN uni_group g;
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>
