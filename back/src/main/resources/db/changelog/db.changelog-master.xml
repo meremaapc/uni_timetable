@@ -36,6 +36,13 @@
     <include file="db/changelog/changeset/pair/pair_time.xml"/>
     <include file="db/changelog/changeset/pair/pair.xml"/>
 
+    <!--Add PK to Teacher_Subject-->
+    <include file="db/changelog/changeset/teacher/teacher_subject.xml"/>
+
+    <!--Number of groups restrictions-->
+    <include file="db/changelog/changeset/restriction/number_of_groups_restriction.xml"/>
+    <include file="db/changelog/changeset/insert/insert_number_of_groups_restriction.xml"/>
+
 
 
 
