@@ -17,4 +17,5 @@ public class RestrictionCountOfHours extends BasicEntity<Long> {
 
     @Column(name = "number_of_hours")
     private byte numberOfHours;
+
 }

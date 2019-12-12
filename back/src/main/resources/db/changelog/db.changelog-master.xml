@@ -57,4 +57,7 @@
     <include file="db/changelog/changeset/restriction/restriction_teacher_slots.xml"/>
     <include file="db/changelog/changeset/insert/insert_teacher_slots_restriction.xml"/>
 
+    <!--Group Subject Insert-->
+    <include file="db/changelog/changeset/insert/insert_group_subject.xml"/>
+
 </databaseChangeLog>

@@ -1,12 +1,14 @@
 package ru.itis.smarteducation.uni_timetable.entity;
 
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 
 @Data
 @Entity
 @Table(name = "pair")
+@Accessors(chain = true)
 public class Pair extends BasicEntity<Long>{
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
