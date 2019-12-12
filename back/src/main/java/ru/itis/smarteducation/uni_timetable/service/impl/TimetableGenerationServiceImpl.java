@@ -50,7 +50,6 @@ public class TimetableGenerationServiceImpl implements TimetableGenerationServic
         List<Pair> generatePair = new ArrayList<>();
 
         subjectList.forEach(subject -> {
-            //+ цикл по количеству таких предметов для групп
             int groupCountBySubject = groupRepository.getCountGroupsBySubject(subject.getId());
             byte weekCount = restrictionCountOfHoursRepository.findBySubject(subject).getNumberOfHours();
 
