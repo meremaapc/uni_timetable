@@ -43,7 +43,15 @@
     <include file="db/changelog/changeset/restriction/number_of_groups_restriction.xml"/>
     <include file="db/changelog/changeset/insert/insert_number_of_groups_restriction.xml"/>
 
+    <!--Number of hours restrictions-->
+    <include file="db/changelog/changeset/restriction/number_of_hours_restriction.xml"/>
+    <include file="db/changelog/changeset/insert/insert_number_of_hours_restriction.xml"/>
 
+    <!--Insert pair time-->
+    <include file="db/changelog/changeset/insert/insert_pair_time.xml"/>
 
+    <!--Teacher slots-->
+    <include file="db/changelog/changeset/restriction/teacher_slots_restriction.xml"/>
+    <include file="db/changelog/changeset/insert/insert_teacher_slots_restriction.xml"/>
 
 </databaseChangeLog>
