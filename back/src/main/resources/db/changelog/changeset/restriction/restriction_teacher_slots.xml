@@ -4,13 +4,13 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
 
-    <changeSet id="create_table_teachers_slots_restriction" author="merenaas">
+    <changeSet id="create_table_restriction_teachers_slots" author="merenaas">
         <preConditions>
             <not>
-                <tableExists tableName="teachers_slots_restriction"/>
+                <tableExists tableName="restriction_teachers_slots"/>
             </not>
         </preConditions>
-        <createTable tableName="teachers_slots_restriction">
+        <createTable tableName="restriction_teachers_slots">
             <column name="id" type="bigint">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -19,37 +19,37 @@
             <column name="day_of_week_id" type="bigint"/>
         </createTable>
     </changeSet>
-    <changeSet id="create_sequence_teachers_slots_restriction" author="merenaas">
+    <changeSet id="create_sequence_restriction_teachers_slots" author="merenaas">
         <preConditions>
             <not>
-                <sequenceExists sequenceName="teachers_slots_restriction_id_seq"/>
+                <sequenceExists sequenceName="restriction_teachers_slots_id_seq"/>
             </not>
         </preConditions>
-        <createSequence sequenceName="teachers_slots_restriction_id_seq"
+        <createSequence sequenceName="restriction_teachers_slots_id_seq"
                         incrementBy="1"
                         minValue="1"/>
     </changeSet>
-    <changeSet id="create_fk_teachers_slots_restriction_teacher" author="merenaas">
+    <changeSet id="create_fk_restriction_teachers_slots_teacher" author="merenaas">
         <addForeignKeyConstraint
-            baseTableName="teachers_slots_restriction"
+            baseTableName="restriction_teachers_slots"
             baseColumnNames="teacher_id"
-            constraintName="fk_teachers_slots_restriction_teacher"
+            constraintName="fk_restriction_teachers_slots_teacher"
             referencedTableName="teacher"
             referencedColumnNames="id"/>
     </changeSet>
-    <changeSet id="create_fk_teachers_slots_restriction_pair_time" author="merenaas">
+    <changeSet id="create_fk_restriction_teachers_slots_pair_time" author="merenaas">
         <addForeignKeyConstraint
-                baseTableName="teachers_slots_restriction"
+                baseTableName="restriction_teachers_slots"
                 baseColumnNames="pair_time_id"
-                constraintName="fk_teachers_slots_restriction_pair_time"
+                constraintName="fk_restriction_teachers_slots_pair_time"
                 referencedTableName="pair_time"
                 referencedColumnNames="id"/>
     </changeSet>
-    <changeSet id="create_fk_teachers_slots_restriction_day_of_week" author="merenaas">
+    <changeSet id="create_fk_restriction_teachers_slots_day_of_week" author="merenaas">
         <addForeignKeyConstraint
-                baseTableName="teachers_slots_restriction"
+                baseTableName="restriction_teachers_slots"
                 baseColumnNames="day_of_week_id"
-                constraintName="fk_teachers_slots_restriction_day_of_week"
+                constraintName="fk_restriction_teachers_slots_day_of_week"
                 referencedTableName="day_of_week"
                 referencedColumnNames="id"/>
     </changeSet>

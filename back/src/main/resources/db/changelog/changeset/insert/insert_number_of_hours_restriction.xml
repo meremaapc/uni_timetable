@@ -3,23 +3,23 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
-    <changeSet id="insert_into_number_of_hours_restriction" author="merenaas">
+    <changeSet id="insert_into_restriction_count_of_hours" author="merenaas">
         <sql>
-            INSERT INTO number_of_hours_restriction(id, subject_id, number_of_hours) VALUES(nextval('number_of_hours_restriction_id_seq'), 1, 1);
-            INSERT INTO number_of_hours_restriction(id, subject_id, number_of_hours) VALUES(nextval('number_of_hours_restriction_id_seq'), 2, 1);
-            INSERT INTO number_of_hours_restriction(id, subject_id, number_of_hours) VALUES(nextval('number_of_hours_restriction_id_seq'), 3, 1);
-            INSERT INTO number_of_hours_restriction(id, subject_id, number_of_hours) VALUES(nextval('number_of_hours_restriction_id_seq'), 4, 3);
-            INSERT INTO number_of_hours_restriction(id, subject_id, number_of_hours) VALUES(nextval('number_of_hours_restriction_id_seq'), 5, 3);
-            INSERT INTO number_of_hours_restriction(id, subject_id, number_of_hours) VALUES(nextval('number_of_hours_restriction_id_seq'), 6, 2);
-            INSERT INTO number_of_hours_restriction(id, subject_id, number_of_hours) VALUES(nextval('number_of_hours_restriction_id_seq'), 7, 1);
-            INSERT INTO number_of_hours_restriction(id, subject_id, number_of_hours) VALUES(nextval('number_of_hours_restriction_id_seq'), 8, 1);
-            INSERT INTO number_of_hours_restriction(id, subject_id, number_of_hours) VALUES(nextval('number_of_hours_restriction_id_seq'), 9, 2);
-            INSERT INTO number_of_hours_restriction(id, subject_id, number_of_hours) VALUES(nextval('number_of_hours_restriction_id_seq'), 10, 3);
-            INSERT INTO number_of_hours_restriction(id, subject_id, number_of_hours) VALUES(nextval('number_of_hours_restriction_id_seq'), 11, 3);
-            INSERT INTO number_of_hours_restriction(id, subject_id, number_of_hours) VALUES(nextval('number_of_hours_restriction_id_seq'), 12, 3);
-            INSERT INTO number_of_hours_restriction(id, subject_id, number_of_hours) VALUES(nextval('number_of_hours_restriction_id_seq'), 13, 2);
-            INSERT INTO number_of_hours_restriction(id, subject_id, number_of_hours) VALUES(nextval('number_of_hours_restriction_id_seq'), 14, 1);
-            INSERT INTO number_of_hours_restriction(id, subject_id, number_of_hours) VALUES(nextval('number_of_hours_restriction_id_seq'), 15, 1);
+            INSERT INTO restriction_count_of_hours(id, subject_id, number_of_hours) VALUES(nextval('restriction_count_of_hours_id_seq'), 1, 1);
+            INSERT INTO restriction_count_of_hours(id, subject_id, number_of_hours) VALUES(nextval('restriction_count_of_hours_id_seq'), 2, 1);
+            INSERT INTO restriction_count_of_hours(id, subject_id, number_of_hours) VALUES(nextval('restriction_count_of_hours_id_seq'), 3, 1);
+            INSERT INTO restriction_count_of_hours(id, subject_id, number_of_hours) VALUES(nextval('restriction_count_of_hours_id_seq'), 4, 3);
+            INSERT INTO restriction_count_of_hours(id, subject_id, number_of_hours) VALUES(nextval('restriction_count_of_hours_id_seq'), 5, 3);
+            INSERT INTO restriction_count_of_hours(id, subject_id, number_of_hours) VALUES(nextval('restriction_count_of_hours_id_seq'), 6, 2);
+            INSERT INTO restriction_count_of_hours(id, subject_id, number_of_hours) VALUES(nextval('restriction_count_of_hours_id_seq'), 7, 1);
+            INSERT INTO restriction_count_of_hours(id, subject_id, number_of_hours) VALUES(nextval('restriction_count_of_hours_id_seq'), 8, 1);
+            INSERT INTO restriction_count_of_hours(id, subject_id, number_of_hours) VALUES(nextval('restriction_count_of_hours_id_seq'), 9, 2);
+            INSERT INTO restriction_count_of_hours(id, subject_id, number_of_hours) VALUES(nextval('restriction_count_of_hours_id_seq'), 10, 3);
+            INSERT INTO restriction_count_of_hours(id, subject_id, number_of_hours) VALUES(nextval('restriction_count_of_hours_id_seq'), 11, 3);
+            INSERT INTO restriction_count_of_hours(id, subject_id, number_of_hours) VALUES(nextval('restriction_count_of_hours_id_seq'), 12, 3);
+            INSERT INTO restriction_count_of_hours(id, subject_id, number_of_hours) VALUES(nextval('restriction_count_of_hours_id_seq'), 13, 2);
+            INSERT INTO restriction_count_of_hours(id, subject_id, number_of_hours) VALUES(nextval('restriction_count_of_hours_id_seq'), 14, 1);
+            INSERT INTO restriction_count_of_hours(id, subject_id, number_of_hours) VALUES(nextval('restriction_count_of_hours_id_seq'), 15, 1);
         </sql>
     </changeSet>
 </databaseChangeLog>
