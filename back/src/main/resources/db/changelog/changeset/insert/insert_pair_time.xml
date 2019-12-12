@@ -1,0 +1,20 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <changeSet id="insert_data_pair_time" author="merenaas">
+        <sql>
+            INSERT INTO pair_time(id, time) VALUES (nextval('pair_time_id_seq'), '8:30');
+            INSERT INTO pair_time(id, time) VALUES (nextval('pair_time_id_seq'), '10:10');
+            INSERT INTO pair_time(id, time) VALUES (nextval('pair_time_id_seq'), '11:50');
+            INSERT INTO pair_time(id, time) VALUES (nextval('pair_time_id_seq'), '14:00');
+            INSERT INTO pair_time(id, time) VALUES (nextval('pair_time_id_seq'), '15:40');
+            INSERT INTO pair_time(id, time) VALUES (nextval('pair_time_id_seq'), '17:50');
+            INSERT INTO pair_time(id, time) VALUES (nextval('pair_time_id_seq'), '19:30');
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>
+

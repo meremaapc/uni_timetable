@@ -35,4 +35,9 @@
                 referencedColumnNames="id"/>
     </changeSet>
 
+
+    <changeSet id="add_pk_teacher_subject" author="merenaas">
+        <addPrimaryKey tableName="teacher_subject" columnNames="teacher_id, subject_id"/>
+    </changeSet>
+
 </databaseChangeLog>

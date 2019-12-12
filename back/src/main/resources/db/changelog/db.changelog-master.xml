@@ -7,7 +7,6 @@
 
     <!-- Group -->
     <include file="db/changelog/changeset/uni_group/uni_group.xml"/>
-    <include file="db/changelog/changeset/uni_group/group_subject.xml"/>
 
     <!-- Student -->
     <include file="db/changelog/changeset/student/student.xml"/>
@@ -23,6 +22,9 @@
     <include file="db/changelog/changeset/auditory/auditory.xml"/>
 
 
+    <!-- Insertion data -->
+    <include file="db/changelog/changeset/insert/insert_static_data.xml"/>
+
     <!-- Day of week -->
     <include file="db/changelog/changeset/day_of_week/day_of_week.xml"/>
     <include file="db/changelog/changeset/insert/insert_day_of_week.xml"/>
@@ -34,12 +36,22 @@
     <include file="db/changelog/changeset/pair/pair_time.xml"/>
     <include file="db/changelog/changeset/pair/pair.xml"/>
 
-    <!-- Restriction -->
-    <include file="db/changelog/changeset/restriction/restriction_pair_day_time.xml"/>
+    <!--Add PK to Teacher_Subject-->
+    <include file="db/changelog/changeset/teacher/teacher_subject.xml"/>
 
+    <!--Number of groups restrictions-->
+    <include file="db/changelog/changeset/restriction/number_of_groups_restriction.xml"/>
+    <include file="db/changelog/changeset/insert/insert_number_of_groups_restriction.xml"/>
 
+    <!--Number of hours restrictions-->
+    <include file="db/changelog/changeset/restriction/number_of_hours_restriction.xml"/>
+    <include file="db/changelog/changeset/insert/insert_number_of_hours_restriction.xml"/>
 
-    <!-- Insertion data -->
-    <include file="db/changelog/changeset/insert/insert_static_data.xml"/>
+    <!--Insert pair time-->
+    <include file="db/changelog/changeset/insert/insert_pair_time.xml"/>
+
+    <!--Teacher slots-->
+    <include file="db/changelog/changeset/restriction/teacher_slots_restriction.xml"/>
+    <include file="db/changelog/changeset/insert/insert_teacher_slots_restriction.xml"/>
 
 </databaseChangeLog>
