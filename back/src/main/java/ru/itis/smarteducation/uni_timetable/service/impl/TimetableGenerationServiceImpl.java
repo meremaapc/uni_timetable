@@ -6,7 +6,6 @@ import org.springframework.transaction.annotation.Transactional;
 import ru.itis.smarteducation.uni_timetable.entity.*;
 import ru.itis.smarteducation.uni_timetable.entity.restriction.RestrictionCountOfGroups;
 import ru.itis.smarteducation.uni_timetable.entity.restriction.RestrictionTeachersSlots;
-import ru.itis.smarteducation.uni_timetable.model.TeacherSubject;
 import ru.itis.smarteducation.uni_timetable.repository.*;
 import ru.itis.smarteducation.uni_timetable.repository.restriction.RestrictionCountOfGroupsRepository;
 import ru.itis.smarteducation.uni_timetable.repository.restriction.RestrictionCountOfHoursRepository;
@@ -46,7 +45,6 @@ public class TimetableGenerationServiceImpl implements TimetableGenerationServic
     private List<Pair> placementTeacher() {
         List<Subject> subjectList = subjectRepository.findAll();
 
-        List<TeacherSubject> teacherSubjectList = new ArrayList<>();
         List<Pair> generatePair = new ArrayList<>();
 
         subjectList.forEach(subject -> {
@@ -54,7 +52,7 @@ public class TimetableGenerationServiceImpl implements TimetableGenerationServic
             byte weekCount = restrictionCountOfHoursRepository.findBySubject(subject).getNumberOfHours();
 
             List<Teacher> satisfyingTeacherList = subject.getTeachers().stream()
-                    .filter(teacher -> isTeacherHasFreeSlotsForSubject(teacher, teacherSubjectList, weekCount))
+                    .filter(teacher -> isTeacherHasFreeSlotsForSubject(teacher, generatePair, weekCount))
                     .collect(Collectors.toList());
             for (int j = 0; j < groupCountBySubject; j ++) {
                 Collections.shuffle(satisfyingTeacherList);
@@ -70,7 +68,7 @@ public class TimetableGenerationServiceImpl implements TimetableGenerationServic
                         continue;
                     }
 
-                    if (isFreeTeacherBySubject(teacherSubjectList, countOfGroupsForTeacherBySubject, teacher, subject)) {
+                    if (isFreeTeacherBySubject(generatePair, countOfGroupsForTeacherBySubject, teacher, subject)) {
 
                         /**
                          *  на этом этапе будет преподаватель, у которого
@@ -143,19 +141,18 @@ public class TimetableGenerationServiceImpl implements TimetableGenerationServic
         return res;
     }
 
-    private boolean isFreeTeacherBySubject(List<TeacherSubject> teacherSubjectList, byte countOfGroups,
+    private boolean isFreeTeacherBySubject(List<Pair> generatePairList, byte countOfGroups,
                                            Teacher teacher, Subject subject) {
-        return teacherSubjectList.stream()
-                .filter(teacherSubject -> teacher.equals(teacherSubject.getTeacher())
-                        && subject.equals(teacherSubject.getSubject()))
+        return generatePairList.stream()
+                .filter(item -> item.getTeacher().equals(teacher)
+                        && item.getSubject().equals(subject))
                 .count() < countOfGroups;
     }
 
-    private boolean isTeacherHasFreeSlotsForSubject(Teacher teacher, List<TeacherSubject> teacherSubjectList, int subjectWeekCount) {
-        return teacher.getSlotList().size() - teacherSubjectList.stream()
-                .filter(teacherSubject -> teacher.equals(teacherSubject.getTeacher()))
-                .mapToInt(TeacherSubject::getWeek_time)
-                .sum() >= subjectWeekCount;
+    private boolean isTeacherHasFreeSlotsForSubject(Teacher teacher, List<Pair> generatePairList, int subjectWeekCount) {
+        return teacher.getSlotList().size() - generatePairList.stream()
+                .filter(generatePar -> generatePar.getTeacher().equals(teacher))
+                .count() >= subjectWeekCount;
     }
 
     @PostConstruct
