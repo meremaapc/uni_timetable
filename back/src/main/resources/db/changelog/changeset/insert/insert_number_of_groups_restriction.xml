@@ -3,87 +3,87 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
-    <changeSet id="insert_into_number_of_groups_restriction" author="merenaas">
+    <changeSet id="insert_into_restriction_count_of_groups" author="merenaas">
         <sql>
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 6, 1, 1);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 7, 1, 1);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 1, 1, 1);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 15, 1, 1);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 2, 1, 2);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 6, 1, 1);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 7, 1, 1);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 1, 1, 1);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 15, 1, 1);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 2, 1, 2);
 
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 1, 2, 2);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 2, 2, 2);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 7, 2, 1);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 8, 2, 1);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 1, 2, 2);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 2, 2, 2);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 7, 2, 1);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 8, 2, 1);
 
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 2, 3, 2);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 3, 3, 2);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 8, 3, 1);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 9, 3, 1);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 2, 3, 2);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 3, 3, 2);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 8, 3, 1);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 9, 3, 1);
 
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 3, 4, 2);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 4, 4, 2);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 9, 4, 1);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 10, 4, 1);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 3, 4, 2);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 4, 4, 2);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 9, 4, 1);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 10, 4, 1);
 
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 4, 5, 2);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 5, 5, 2);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 10, 5, 1);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 11, 5, 1);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 4, 5, 2);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 5, 5, 2);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 10, 5, 1);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 11, 5, 1);
 
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 5, 6, 1);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 6, 6, 1);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 11, 6, 2);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 12, 6, 2);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 5, 6, 1);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 6, 6, 1);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 11, 6, 2);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 12, 6, 2);
 
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 6, 7, 2);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 7, 7, 2);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 12, 7, 1);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 13, 7, 1);
-
-
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 7, 8, 2);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 8, 8, 2);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 13, 8, 1);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 14, 8, 1);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 6, 7, 2);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 7, 7, 2);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 12, 7, 1);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 13, 7, 1);
 
 
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 8, 9, 2);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 14, 9, 2);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 15, 9, 1);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 9, 9, 1);
-
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 9, 10, 2);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 5, 10, 2);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 6, 10, 1);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 10, 10, 1);
-
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 10, 11, 2);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 11, 11, 2);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 4, 11, 1);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 5, 11, 1);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 7, 8, 2);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 8, 8, 2);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 13, 8, 1);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 14, 8, 1);
 
 
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 11, 12, 2);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 12, 12, 2);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 3, 12, 1);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 4, 12, 1);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 8, 9, 2);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 14, 9, 2);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 15, 9, 1);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 9, 9, 1);
 
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 2, 13, 3);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 12, 13, 1);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 13, 13, 1);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 3, 13, 1);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 9, 10, 2);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 5, 10, 2);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 6, 10, 1);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 10, 10, 1);
+
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 10, 11, 2);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 11, 11, 2);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 4, 11, 1);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 5, 11, 1);
 
 
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 13, 14, 2);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 14, 14, 2);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 1, 14, 1);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 15, 14, 1);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 11, 12, 2);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 12, 12, 2);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 3, 12, 1);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 4, 12, 1);
+
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 2, 13, 3);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 12, 13, 1);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 13, 13, 1);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 3, 13, 1);
 
 
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 14, 15, 2);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 15, 15, 2);
-            INSERT INTO number_of_groups_restriction(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('number_of_groups_restriction_id_seq'), 1, 15, 2);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 13, 14, 2);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 14, 14, 2);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 1, 14, 1);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 15, 14, 1);
+
+
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 14, 15, 2);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 15, 15, 2);
+            INSERT INTO restriction_count_of_groups(id, teacher_id, subject_id, number_of_groups) VALUES (nextval('restriction_count_of_groups_id_seq'), 1, 15, 2);
 
         </sql>
     </changeSet>

@@ -4,13 +4,13 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
 
-    <changeSet id="create_table_number_of_groups_restriction" author="merenaas">
+    <changeSet id="create_table_restriction_count_of_groups" author="merenaas">
         <preConditions>
             <not>
-                <tableExists tableName="number_of_groups_restriction"/>
+                <tableExists tableName="restriction_count_of_groups"/>
             </not>
         </preConditions>
-        <createTable tableName="number_of_groups_restriction">
+        <createTable tableName="restriction_count_of_groups">
             <column name="id" type="bigint">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -19,21 +19,21 @@
             <column name="number_of_groups" type="smallint"/>
         </createTable>
     </changeSet>
-    <changeSet id="create_sequence_number_of_groups_restriction" author="merenaas">
+    <changeSet id="create_sequence_restriction_count_of_groups" author="merenaas">
         <preConditions>
             <not>
-                <sequenceExists sequenceName="number_of_groups_restriction_id_seq"/>
+                <sequenceExists sequenceName="restriction_count_of_groups_id_seq"/>
             </not>
         </preConditions>
-        <createSequence sequenceName="number_of_groups_restriction_id_seq"
+        <createSequence sequenceName="restriction_count_of_groups_id_seq"
                         incrementBy="1"
                         minValue="1"/>
     </changeSet>
-    <changeSet id="create_fk_number_of_groups_restriction_teacher" author="merenaas">
+    <changeSet id="create_fk_restriction_count_of_groups_teacher" author="merenaas">
         <addForeignKeyConstraint
-                baseTableName="number_of_groups_restriction"
+                baseTableName="restriction_count_of_groups"
                 baseColumnNames="teacher_id, subject_id"
-                constraintName="fk_number_of_groups_restriction_teacher"
+                constraintName="fk_restriction_count_of_groups_teacher"
                 referencedTableName="teacher_subject"
                 referencedColumnNames="teacher_id, subject_id"/>
     </changeSet>
