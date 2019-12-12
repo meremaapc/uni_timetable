@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Table(name = "restriction_count_of_hours")
 public class RestrictionCountOfHours extends BasicEntity<Long> {
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "subject_id")
     private Subject subject;
 
