@@ -1,5 +1,6 @@
 package ru.itis.smarteducation.uni_timetable.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -37,6 +38,7 @@ public class Pair extends BasicEntity<Long>{
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "timetable_id")
+    @JsonIgnore
     private Timetable timetable;
 
 }

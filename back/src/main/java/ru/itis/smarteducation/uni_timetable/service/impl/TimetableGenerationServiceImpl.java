@@ -42,7 +42,8 @@ public class TimetableGenerationServiceImpl implements TimetableGenerationServic
         return null;
     }
 
-    private List<Pair> placementTeacher() {
+    @Transactional
+    public List<Pair> placementTeacher() {
         List<Subject> subjectList = subjectRepository.findAll();
 
         List<Pair> generatePair = new ArrayList<>();

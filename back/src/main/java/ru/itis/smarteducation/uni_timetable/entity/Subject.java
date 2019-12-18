@@ -1,5 +1,6 @@
 package ru.itis.smarteducation.uni_timetable.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -13,6 +14,7 @@ public class Subject extends BasicEntity<Long> {
     @Column(name = "name")
     private String name;
 
+    @JsonIgnore
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "teacher_subject",
             joinColumns = @JoinColumn(name="subject_id"),

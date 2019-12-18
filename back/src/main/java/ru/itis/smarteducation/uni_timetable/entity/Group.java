@@ -1,5 +1,6 @@
 package ru.itis.smarteducation.uni_timetable.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.Column;
@@ -21,10 +22,12 @@ public class Group extends BasicEntity<Long>{
     @Column(name = "number")
     private String number;
 
+    @JsonIgnore
     @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "id")
     private List<Student> studentList;
 
+    @JsonIgnore
     @ManyToMany
     @JoinTable(
         name = "group_subject",
