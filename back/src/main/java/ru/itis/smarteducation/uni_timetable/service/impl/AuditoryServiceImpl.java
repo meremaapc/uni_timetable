@@ -3,7 +3,7 @@ package ru.itis.smarteducation.uni_timetable.service.impl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.itis.smarteducation.uni_timetable.dto.AuditoryDto;
-import ru.itis.smarteducation.uni_timetable.mapper.PairMapper;
+import ru.itis.smarteducation.uni_timetable.mapper.CommonMapper;
 import ru.itis.smarteducation.uni_timetable.repository.AuditoryRepository;
 import ru.itis.smarteducation.uni_timetable.service.AuditoryService;
 
@@ -15,14 +15,14 @@ import java.util.stream.Collectors;
 public class AuditoryServiceImpl implements AuditoryService {
 
     private final AuditoryRepository auditoryRepository;
-    private final PairMapper pairMapper;
+    private final CommonMapper commonMapper;
 
 
     @Override
     public List<AuditoryDto> findAll() {
         return auditoryRepository.findAll()
             .stream()
-            .map(pairMapper::auditoryToAuditoryDto)
+            .map(commonMapper::auditoryToAuditoryDto)
             .collect(Collectors.toList());
     }
 }

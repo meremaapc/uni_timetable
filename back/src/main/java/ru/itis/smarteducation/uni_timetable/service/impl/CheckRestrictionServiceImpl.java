@@ -1,10 +1,9 @@
 package ru.itis.smarteducation.uni_timetable.service.impl;
 
 import org.springframework.stereotype.Service;
-import ru.itis.smarteducation.uni_timetable.entity.Pair;
-import ru.itis.smarteducation.uni_timetable.entity.Subject;
-import ru.itis.smarteducation.uni_timetable.entity.Teacher;
-import ru.itis.smarteducation.uni_timetable.entity.restriction.RestrictionTeachersSlots;
+import ru.itis.smarteducation.uni_timetable.dto.PairDto;
+import ru.itis.smarteducation.uni_timetable.dto.RestrictionTeachersSlotsDto;
+import ru.itis.smarteducation.uni_timetable.dto.TeacherDto;
 import ru.itis.smarteducation.uni_timetable.model.TeacherSubjectGroup;
 import ru.itis.smarteducation.uni_timetable.service.CheckRestrictionService;
 
@@ -15,7 +14,7 @@ import java.util.stream.Collectors;
 public class CheckRestrictionServiceImpl implements CheckRestrictionService {
 
     @Override
-    public boolean isTeacherHasFreeSlotsForSubject(Teacher teacher, List<Pair> generatePairList, int subjectWeekCount) {
+    public boolean isTeacherHasFreeSlotsForSubject(TeacherDto teacher, List<PairDto> generatePairList, int subjectWeekCount) {
         return teacher.getSlotList().size() - generatePairList.stream()
             .filter(generatePar -> generatePar.getTeacher().equals(teacher))
             .count() >= subjectWeekCount;
@@ -31,25 +30,24 @@ public class CheckRestrictionServiceImpl implements CheckRestrictionService {
     }
 
     @Override
-    public boolean isTeacherFreeThisPairTimeWeek(Pair pairCandidate, Teacher teacher, List<Pair> generatePairs) {
-        List<Pair> generatePairByTeacher = generatePairs.stream()
+    public boolean isTeacherFreeThisPairTimeWeek(PairDto pairCandidate, TeacherDto teacher, List<PairDto> generatePairs) {
+        List<PairDto> generatePairByTeacher = generatePairs.stream()
             .filter(generatePair -> generatePair.getTeacher().equals(teacher))
             .collect(Collectors.toList());
 
-        List<RestrictionTeachersSlots> s = teacher.getSlotList().stream()
+        List<RestrictionTeachersSlotsDto> s = teacher.getSlotList().stream()
             .filter(slot -> generatePairByTeacher.stream()
                 .noneMatch(item -> item.getPairTime().equals(slot.getPairTime())
                     && item.getDayOfWeek().equals(slot.getDayOfWeek())))
             .collect(Collectors.toList());
-        boolean res = s.stream()
+
+        return s.stream()
             .anyMatch(slot -> slot.getDayOfWeek().equals(pairCandidate.getDayOfWeek())
                 && slot.getPairTime().equals(pairCandidate.getPairTime()));
-
-        return res;
     }
 
     @Override
-    public boolean isFreeAuditory(Pair pairCandidate, List<Pair> generatePairList) {
+    public boolean isFreeAuditory(PairDto pairCandidate, List<PairDto> generatePairList) {
         return generatePairList.stream()
             .noneMatch(generatePair -> generatePair.getDayOfWeek().equals(pairCandidate.getDayOfWeek())
                 && generatePair.getPairTime().equals(pairCandidate.getPairTime())

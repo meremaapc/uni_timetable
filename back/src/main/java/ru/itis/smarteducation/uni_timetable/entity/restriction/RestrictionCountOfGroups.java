@@ -1,10 +1,16 @@
 package ru.itis.smarteducation.uni_timetable.entity.restriction;
 
 import lombok.Data;
-import ru.itis.smarteducation.uni_timetable.entity.BasicEntity;
 import ru.itis.smarteducation.uni_timetable.entity.Subject;
 import ru.itis.smarteducation.uni_timetable.entity.Teacher;
-import javax.persistence.*;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Data
 @Entity

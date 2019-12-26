@@ -4,15 +4,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
-import java.util.List;
-
 @Data
 @Accessors(chain = true)
 @NoArgsConstructor
-public class TeacherDto {
+public class RestrictionTeachersSlotsDto {
 
-    private Long id;
-    private String name;
-    private List<RestrictionTeachersSlotsDto> slotList;
+    private PairTimeDto pairTime;
+    private DayOfWeekDto dayOfWeek;
 
 }

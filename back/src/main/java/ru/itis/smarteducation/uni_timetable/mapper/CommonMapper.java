@@ -8,33 +8,22 @@ import org.mapstruct.ReportingPolicy;
 import ru.itis.smarteducation.uni_timetable.dto.AuditoryDto;
 import ru.itis.smarteducation.uni_timetable.dto.DayOfWeekDto;
 import ru.itis.smarteducation.uni_timetable.dto.GroupDto;
-import ru.itis.smarteducation.uni_timetable.dto.PairDto;
 import ru.itis.smarteducation.uni_timetable.dto.PairTimeDto;
+import ru.itis.smarteducation.uni_timetable.dto.RestrictionTeachersSlotsDto;
 import ru.itis.smarteducation.uni_timetable.dto.StudentDto;
 import ru.itis.smarteducation.uni_timetable.dto.SubjectDto;
 import ru.itis.smarteducation.uni_timetable.dto.TeacherDto;
 import ru.itis.smarteducation.uni_timetable.entity.Auditory;
 import ru.itis.smarteducation.uni_timetable.entity.DayOfWeek;
 import ru.itis.smarteducation.uni_timetable.entity.Group;
-import ru.itis.smarteducation.uni_timetable.entity.Pair;
 import ru.itis.smarteducation.uni_timetable.entity.PairTime;
 import ru.itis.smarteducation.uni_timetable.entity.Student;
 import ru.itis.smarteducation.uni_timetable.entity.Subject;
 import ru.itis.smarteducation.uni_timetable.entity.Teacher;
+import ru.itis.smarteducation.uni_timetable.entity.restriction.RestrictionTeachersSlots;
 
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
-public interface PairMapper {
-
-    @Mappings({
-        @Mapping(target = "group", qualifiedByName = "groupDtoMapper"),
-        @Mapping(target = "subject", qualifiedByName = "subjectDtoMapper"),
-        @Mapping(target = "auditory", qualifiedByName = "auditoryDtoMapper"),
-        @Mapping(target = "dayOfWeek", qualifiedByName = "dayOfWeekDtoMapper"),
-        @Mapping(target = "teacher", qualifiedByName = "teacherDtoMapper"),
-        @Mapping(target = "pairTime", qualifiedByName = "pairTimeDtoMapper")
-    })
-    PairDto toDto(Pair pair);
-
+public interface CommonMapper {
 
     @Named("groupDtoMapper")
     @Mappings({
@@ -54,6 +43,7 @@ public interface PairMapper {
     DayOfWeekDto dayOfWeekToDayOfWeekDto(DayOfWeek dayOfWeek);
 
     @Named("teacherDtoMapper")
+    @Mapping(target = "slotList", qualifiedByName = "restrictionTeachersSlotsMapper")
     TeacherDto teacherToTeacherDto(Teacher teacher);
 
     @Named("pairTime")
@@ -62,6 +52,11 @@ public interface PairMapper {
     @Named("studentDtoMapper")
     StudentDto studentToStudentDto(Student student);
 
-
+    @Named("restrictionTeachersSlotsMapper")
+    @Mappings({
+        @Mapping(target = "dayOfWeek", qualifiedByName = "dayOfWeekDtoMapper"),
+        @Mapping(target = "pairTime", qualifiedByName = "pairTime")
+    })
+    RestrictionTeachersSlotsDto restrictionTeachersSlotsToDto(RestrictionTeachersSlots restrictionTeachersSlots);
 
 }

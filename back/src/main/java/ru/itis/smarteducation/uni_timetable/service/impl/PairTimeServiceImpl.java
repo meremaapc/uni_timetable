@@ -3,7 +3,7 @@ package ru.itis.smarteducation.uni_timetable.service.impl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.itis.smarteducation.uni_timetable.dto.PairTimeDto;
-import ru.itis.smarteducation.uni_timetable.mapper.PairMapper;
+import ru.itis.smarteducation.uni_timetable.mapper.CommonMapper;
 import ru.itis.smarteducation.uni_timetable.repository.PairTimeRepository;
 import ru.itis.smarteducation.uni_timetable.service.PairTimeService;
 
@@ -15,13 +15,13 @@ import java.util.stream.Collectors;
 public class PairTimeServiceImpl implements PairTimeService {
 
     private final PairTimeRepository timeRepository;
-    private final PairMapper pairMapper;
+    private final CommonMapper commonMapper;
 
     @Override
     public List<PairTimeDto> findAll() {
         return timeRepository.findAll()
             .stream()
-            .map(pairMapper::pairTimeToPairTimeDto)
+            .map(commonMapper::pairTimeToPairTimeDto)
             .collect(Collectors.toList());
     }
 }
