@@ -13,11 +13,16 @@ import java.util.List;
 public class CalculateRestrictionFunctionValueServiceImpl implements CalculateRestrictionFunctionValueService {
 
     private final CheckRestrictionService checkRestrictionService;
-    private final int RESTRICTION_COUNT = 3;
 
     @Override
     public double calculate(List<PairDto> pairList) {
-        double partOfPercent = 100.0 / RESTRICTION_COUNT;
-        return 0;
+        long violationCount = pairList.size() - pairList.stream()
+            .filter(checkRestrictionService::isTeacherFreeThisPairTimeWeek)
+            .count();
+
+        /*
+            Процентная доля плохо подобранных дней для преподавателей
+         */
+        return (double) violationCount / pairList.size();
     }
 }

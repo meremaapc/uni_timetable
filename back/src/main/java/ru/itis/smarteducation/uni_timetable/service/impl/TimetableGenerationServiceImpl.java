@@ -96,6 +96,7 @@ public class TimetableGenerationServiceImpl implements TimetableGenerationServic
           1. Преподаватель ведет только те предметы, которые обозначены
           2. Преподаватель берет количество групп, не превышащее ограничения
           3. У всех групп есть преподаватель
+          4. Аудитория не занята больше чем одной группой
          */
         Collections.shuffle(subjectList);
         subjectList.forEach(subject -> {
