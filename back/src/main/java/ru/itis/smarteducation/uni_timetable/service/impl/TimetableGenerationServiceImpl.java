@@ -3,15 +3,27 @@ package ru.itis.smarteducation.uni_timetable.service.impl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.itis.smarteducation.uni_timetable.entity.*;
-import ru.itis.smarteducation.uni_timetable.entity.restriction.RestrictionCountOfGroups;
-import ru.itis.smarteducation.uni_timetable.entity.restriction.RestrictionTeachersSlots;
-import ru.itis.smarteducation.uni_timetable.repository.*;
-import ru.itis.smarteducation.uni_timetable.repository.restriction.RestrictionCountOfGroupsRepository;
-import ru.itis.smarteducation.uni_timetable.repository.restriction.RestrictionCountOfHoursRepository;
+import ru.itis.smarteducation.uni_timetable.dto.AuditoryDto;
+import ru.itis.smarteducation.uni_timetable.dto.DayOfWeekDto;
+import ru.itis.smarteducation.uni_timetable.dto.GroupDto;
+import ru.itis.smarteducation.uni_timetable.dto.PairDto;
+import ru.itis.smarteducation.uni_timetable.dto.PairTimeDto;
+import ru.itis.smarteducation.uni_timetable.dto.SubjectDto;
+import ru.itis.smarteducation.uni_timetable.dto.TeacherDto;
+import ru.itis.smarteducation.uni_timetable.dto.TimetableDto;
+import ru.itis.smarteducation.uni_timetable.model.TeacherSubjectGroup;
+import ru.itis.smarteducation.uni_timetable.service.AuditoryService;
+import ru.itis.smarteducation.uni_timetable.service.CalculateRestrictionFunctionValueService;
+import ru.itis.smarteducation.uni_timetable.service.CheckRestrictionService;
+import ru.itis.smarteducation.uni_timetable.service.DayOfWeekService;
+import ru.itis.smarteducation.uni_timetable.service.GroupService;
+import ru.itis.smarteducation.uni_timetable.service.PairTimeService;
+import ru.itis.smarteducation.uni_timetable.service.RestrictionService;
+import ru.itis.smarteducation.uni_timetable.service.SubjectService;
 import ru.itis.smarteducation.uni_timetable.service.TimetableGenerationService;
 
 import javax.annotation.PostConstruct;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -24,156 +36,128 @@ public class TimetableGenerationServiceImpl implements TimetableGenerationServic
 
     private final Logger log = Logger.getLogger(TimetableGenerationService.class.getSimpleName());
 
-    private final GroupRepository groupRepository;
-    private final DayOfWeekRepository dayOfWeekRepository;
-    private final AuditoryRepository auditoryRepository;
-    private final PairTimeRepository pairTimeRepository;
-    private final SubjectRepository subjectRepository;
-    private final RestrictionCountOfHoursRepository restrictionCountOfHoursRepository;
-    private final RestrictionCountOfGroupsRepository restrictionCountOfGroupsRepository;
+    private final CheckRestrictionService checkRestrictionService;
+    private final CalculateRestrictionFunctionValueService calculateRestrictionFunctionValueService;
+    private final RestrictionService restrictionService;
+    private final GroupService groupService;
+    private final SubjectService subjectService;
+    private final DayOfWeekService dayOfWeekService;
+    private final PairTimeService pairTimeService;
+    private final AuditoryService auditoryService;
 
 
-    private final List<Pair> allKindOfPair = new ArrayList<>();
+    private final List<PairDto> allKindOfPair = new ArrayList<>();
 
     @Override
     @Transactional
-    public Timetable generate() {
-        placementTeacher();
-        return null;
+    public TimetableDto generate() {
+        List<PairDto> generatedPair = placementTeacherSubjectGroup();
+        double perfectPercent = calculateRestrictionFunctionValueService.calculate(generatedPair);
+        return new TimetableDto()
+            .setPairList(generatedPair)
+            .setCreateDate(LocalDateTime.now())
+            .setPerfectPercent(perfectPercent);
     }
 
-    @Transactional
-    public List<Pair> placementTeacher() {
-        List<Subject> subjectList = subjectRepository.findAll();
+    private List<PairDto> placementTeacherSubjectGroup() {
 
-        List<Pair> generatePair = new ArrayList<>();
+        List<PairDto> generatePair = new ArrayList<>();
+        List<SubjectDto> subjectList = subjectService.findAll();
+        List<GroupDto> groupList = groupService.findAll();
 
-        subjectList.forEach(subject -> {
-            int groupCountBySubject = groupRepository.getCountGroupsBySubject(subject.getId());
-            byte weekCount = restrictionCountOfHoursRepository.findBySubject(subject).getNumberOfHours();
+        List<TeacherSubjectGroup> teacherSubjectGroups = setSubjectAndGroupToTeacher(subjectList, groupList);
+        Collections.shuffle(allKindOfPair);
 
-            List<Teacher> satisfyingTeacherList = subject.getTeachers().stream()
-                    .filter(teacher -> isTeacherHasFreeSlotsForSubject(teacher, generatePair, weekCount))
-                    .collect(Collectors.toList());
-            for (int j = 0; j < groupCountBySubject; j ++) {
-                Collections.shuffle(satisfyingTeacherList);
-
-                boolean subjectTeacherSet = false;
-
-                for (Teacher teacher : satisfyingTeacherList) {
-                    byte countOfGroupsForTeacherBySubject =
-                            restrictionCountOfGroupsRepository.findByTeacherAndSubject(teacher.getId(), subject.getId())
-                                    .orElse(new RestrictionCountOfGroups()).getNumberOfGroups();
-
-                    if (countOfGroupsForTeacherBySubject == 0) {
-                        continue;
-                    }
-
-                    if (isFreeTeacherBySubject(generatePair, countOfGroupsForTeacherBySubject, teacher, subject)) {
-
-                        /**
-                         *  на этом этапе будет преподаватель, у которого
-                         *  - есть такой предмет
-                         *  - есть свободное место для группы
-                         *  - есть слоты для того, чтобы вставить туда пары
-                         *
-                         */
-
-                        Collections.shuffle(allKindOfPair);
-
-                        boolean setPair = false;
-
-                        for (int i = 0; i < allKindOfPair.size() && !setPair; i++) {
-                            Pair pair = allKindOfPair.get(i);
-                            setPair = isTeacherFreeThisPairTimeWeek(pair, teacher, generatePair)
-                                    && isFreeAuditory(pair, generatePair);
-
-                            if (setPair) {
-                                allKindOfPair.remove(pair);
-                                pair.setSubject(subject);
-                                pair.setTeacher(teacher);
-                                generatePair.add(pair);
-                            }
-                        }
-
-                        subjectTeacherSet = setPair;
-                    }
-
-                    if (subjectTeacherSet) {
-                        break;
-                    }
-                }
-
-                if (!subjectTeacherSet) {
-                    String msg = "Не удалось сгенерировать расписание";
-                    log.warning(msg);
-                    throw new IllegalArgumentException(msg);
-                }
+        teacherSubjectGroups.forEach(teacherSubjectGroup -> {
+            for (int i = 0; i < teacherSubjectGroup.getHours(); i ++) {
+                PairDto pairCandidate = allKindOfPair.stream()
+                    .findFirst()
+                    .orElseThrow(() ->
+                        new IndexOutOfBoundsException("Закончились пары!"));
+                 /*
+                    todo: ? Строгие ограничения: отуствие пар в одной аудитории
+                */
+                allKindOfPair.remove(pairCandidate);
+                pairCandidate.setSubject(teacherSubjectGroup.getSubject());
+                pairCandidate.setTeacher(teacherSubjectGroup.getTeacher());
+                pairCandidate.setGroup(teacherSubjectGroup.getGroup());
+                generatePair.add(pairCandidate);
             }
         });
 
         return generatePair;
     }
 
-
-    //кажется не нужно, в список allKindOfPair нет пересекающихся данных
-    private boolean isFreeAuditory(Pair pairCandidate, List<Pair> generatePairList) {
-        return generatePairList.stream()
-                .noneMatch(generatePair -> generatePair.getDayOfWeek().equals(pairCandidate.getDayOfWeek())
-                        && generatePair.getPairTime().equals(pairCandidate.getPairTime())
-                        && generatePair.getAuditory().equals(pairCandidate.getAuditory()));
-    }
-
-    private boolean isTeacherFreeThisPairTimeWeek(Pair pairCandidate, Teacher teacher,
-                                                  List<Pair> generatePairs) {
-        List<Pair> generatePairByTeacher = generatePairs.stream()
-                .filter(generatePair -> generatePair.getTeacher().equals(teacher))
+    private List<TeacherSubjectGroup> setSubjectAndGroupToTeacher(List<SubjectDto> subjectList,
+                                                                  List<GroupDto> groups) {
+        List<TeacherSubjectGroup> teacherSubjectGroups = new ArrayList<>();
+        /*
+          Строгие ограничения:
+          1. Преподаватель ведет только те предметы, которые обозначены
+          2. Преподаватель берет количество групп, не превышащее ограничения
+          3. У всех групп есть преподаватель
+          4. Аудитория не занята больше чем одной группой
+         */
+        Collections.shuffle(subjectList);
+        subjectList.forEach(subject -> {
+            List<GroupDto> groupsBySubject = groups.stream()
+                .filter(item -> item.getSubjectList().contains(subject))
                 .collect(Collectors.toList());
+            List<TeacherDto> satisfyingTeacherList = subject.getTeachers();
 
-        List<RestrictionTeachersSlots> s = teacher.getSlotList().stream()
-                .filter(slot -> generatePairByTeacher.stream()
-                        .noneMatch(item -> item.getPairTime().equals(slot.getPairTime())
-                                && item.getDayOfWeek().equals(slot.getDayOfWeek())))
-                .collect(Collectors.toList());
-        boolean res = s.stream()
-                .anyMatch(slot -> slot.getDayOfWeek().equals(pairCandidate.getDayOfWeek())
-                        && slot.getPairTime().equals(pairCandidate.getPairTime()));
+            Collections.shuffle(groupsBySubject);
 
-        return res;
+            for (GroupDto group : groupsBySubject) {
+                Collections.shuffle(satisfyingTeacherList);
+
+                int hourCount = restrictionService.getHoursBydSubject(subject);
+                boolean teacherFind = false;
+                for (TeacherDto teacher : satisfyingTeacherList) {
+                    byte countOfGroupsForTeacherBySubject = restrictionService
+                        .findByTeacherAndSubject(teacher.getId(), subject.getId());
+                    boolean isTeacherFreeBySubject = checkRestrictionService.isFreeTeacherBySubject(teacherSubjectGroups,
+                        countOfGroupsForTeacherBySubject, teacher.getId(), subject.getId());
+
+                    if (isTeacherFreeBySubject) {
+                        teacherFind = true;
+                        TeacherSubjectGroup teacherSubjectGroup = new TeacherSubjectGroup()
+                            .setGroup(group)
+                            .setSubject(subject)
+                            .setTeacher(teacher)
+                            .setHours(hourCount);
+                        teacherSubjectGroups.add(teacherSubjectGroup);
+                        break;
+                    }
+                }
+
+                if (!teacherFind) {
+                    log.warning("Teacher for group " + group.getId() + " for subject " + subject.getId() + " not found");
+                }
+            }
+        });
+
+        return teacherSubjectGroups;
     }
 
-    private boolean isFreeTeacherBySubject(List<Pair> generatePairList, byte countOfGroups,
-                                           Teacher teacher, Subject subject) {
-        return generatePairList.stream()
-                .filter(item -> item.getTeacher().equals(teacher)
-                        && item.getSubject().equals(subject))
-                .count() < countOfGroups;
-    }
-
-    private boolean isTeacherHasFreeSlotsForSubject(Teacher teacher, List<Pair> generatePairList, int subjectWeekCount) {
-        return teacher.getSlotList().size() - generatePairList.stream()
-                .filter(generatePar -> generatePar.getTeacher().equals(teacher))
-                .count() >= subjectWeekCount;
-    }
 
     @PostConstruct
     private void generateAllKindOfPair() {
-        List<DayOfWeek> weeks = dayOfWeekRepository.findAll();
-        List<PairTime> pairTimes = pairTimeRepository.findAll();
-        List<Auditory> auditoryList = auditoryRepository.findAll();
+        List<DayOfWeekDto> weeks = dayOfWeekService.findAll();
+        List<PairTimeDto> pairTimes = pairTimeService.findAll();
+        List<AuditoryDto> auditoryList = auditoryService.findAll();
 
         //без воскресенье
         weeks.remove(weeks.size() - 1);
 
         weeks.forEach(week ->
-                pairTimes.forEach(
-                        pairTime -> auditoryList.forEach(auditory -> {
-                            Pair pair = new Pair()
-                                    .setAuditory(auditory)
-                                    .setPairTime(pairTime)
-                                    .setDayOfWeek(week);
-                            allKindOfPair.add(pair);
-                        }))
+            pairTimes.forEach(
+                pairTime -> auditoryList.forEach(auditory -> {
+                    PairDto pair = new PairDto()
+                        .setAuditory(auditory)
+                        .setPairTime(pairTime)
+                        .setDayOfWeek(week);
+                    allKindOfPair.add(pair);
+                }))
         );
 
         Collections.shuffle(allKindOfPair);

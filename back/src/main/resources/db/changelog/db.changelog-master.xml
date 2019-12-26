@@ -32,12 +32,8 @@
     <include file="db/changelog/changeset/day_of_week/day_of_week.xml"/>
     <include file="db/changelog/changeset/insert/insert_day_of_week.xml"/>
 
-    <!-- Timetable -->
-    <include file="db/changelog/changeset/timetable/timetable.xml"/>
-
     <!-- Pair -->
     <include file="db/changelog/changeset/pair/pair_time.xml"/>
-    <include file="db/changelog/changeset/pair/pair.xml"/>
 
     <!--Add PK to Teacher_Subject-->
     <include file="db/changelog/changeset/teacher/teacher_subject.xml"/>

@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name = "restriction_teachers_slots")
-public class RestrictionTeachersSlots extends BasicEntity<Long> {
+public class RestrictionTeachersSlots extends BaseRestriction {
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "teacher_id")

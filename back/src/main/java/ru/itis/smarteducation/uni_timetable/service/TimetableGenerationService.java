@@ -1,11 +1,9 @@
 package ru.itis.smarteducation.uni_timetable.service;
 
-import ru.itis.smarteducation.uni_timetable.entity.Pair;
-import ru.itis.smarteducation.uni_timetable.entity.Timetable;
-
-import java.util.List;
+import ru.itis.smarteducation.uni_timetable.dto.TimetableDto;
 
 public interface TimetableGenerationService {
-    Timetable generate();
-    List<Pair> placementTeacher();
+
+    TimetableDto generate();
+
 }
