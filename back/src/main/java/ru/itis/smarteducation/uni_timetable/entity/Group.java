@@ -31,8 +31,8 @@ public class Group extends BasicEntity<Long>{
     @ManyToMany
     @JoinTable(
         name = "group_subject",
-        joinColumns = @JoinColumn(name = "subject_id"),
-        inverseJoinColumns = @JoinColumn(name = "group_id")
+        joinColumns = @JoinColumn(name = "group_id"),
+        inverseJoinColumns = @JoinColumn(name = "subject_id")
     )
     private List<Subject> subjectList;
 

@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name="restriction_count_of_groups")
-public class RestrictionCountOfGroups extends BasicEntity<Long> {
+public class RestrictionCountOfGroups extends BaseRestriction {
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "teacher_id")

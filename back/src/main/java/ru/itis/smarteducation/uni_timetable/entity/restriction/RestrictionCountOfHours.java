@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name = "restriction_count_of_hours")
-public class RestrictionCountOfHours extends BasicEntity<Long> {
+public class RestrictionCountOfHours extends BaseRestriction {
 
     @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "subject_id")
